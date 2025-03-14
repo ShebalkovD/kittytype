@@ -19,4 +19,9 @@ a {
     padding: 2rem;
 }
 
+div:focus {
+    outline: none;
+    border: none;
+}
+
 @import "tailwindcss";
