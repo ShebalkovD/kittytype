@@ -2,6 +2,7 @@
 
 html, * {
     box-sizing: border-box;
+    font-size: 16px;
 }
 a {
     text-decoration: none;
@@ -22,6 +23,29 @@ a {
 div:focus {
     outline: none;
     border: none;
+}
+
+.current-symbol::before {
+    content: "";
+    display: block;
+    width: 1px;
+    height: 100%;
+    background-color: black;
+    position: absolute;
+    top: 0;
+    left: 0 ;
+    animation: pointer 1.5s infinite;
+    animation-timing-function: steps(2, jump-end);
+}
+
+@keyframes pointer {
+    from{
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
 }
 
 @import "tailwindcss";
