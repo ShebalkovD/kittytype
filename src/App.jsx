@@ -1,9 +1,13 @@
+import Type from './components/Type.jsx'
+
 function App() {
-  return (
-    <>
-     
-    </>
-  )
+
+
+    return (
+        <>
+            <Type />
+        </>
+    )
 }
 
 export default App
