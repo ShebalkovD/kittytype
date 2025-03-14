@@ -2,7 +2,6 @@
 
 html, * {
     box-sizing: border-box;
-    font-size: 16px;
 }
 a {
     text-decoration: none;
@@ -17,10 +16,10 @@ a {
 .container {
     max-width: 1280px;
     margin: 0 auto;
-    padding: 2rem;
+    padding: 1rem;
 }
 
-div:focus {
+main:focus, div:focus {
     outline: none;
     border: none;
 }
@@ -28,24 +27,12 @@ div:focus {
 .current-symbol::before {
     content: "";
     display: block;
-    width: 1px;
+    min-width: 2px;
     height: 100%;
-    background-color: black;
     position: absolute;
     top: 0;
-    left: 0 ;
-    animation: pointer 1.5s infinite;
-    animation-timing-function: steps(2, jump-end);
-}
-
-@keyframes pointer {
-    from{
-        opacity: 1;
-    }
-
-    to {
-        opacity: 0;
-    }
+    left: -1px;
+    border-radius: 1rem
 }
 
 @import "tailwindcss";
