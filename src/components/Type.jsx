@@ -12,7 +12,8 @@ export default function Type() {
     const [shift, setShift] = useState(0)
     const [theme, setTheme] = useState('light')
     const [themeConfig, setThemeConfig] = useState(themes[0])
-
+    const [catConfig, setCatConfig] = useState(cats.orange)
+    const [catImg, setCatImg] = useState(catConfig.default)
     let currentSymbol = textArray[counter]
 
     const handleKeyDown = (event) => {
@@ -20,8 +21,10 @@ export default function Type() {
             setShift(prev => prev + textlineRef.current.childNodes[counter].offsetWidth)
             setCounter(prev => prev + 1)
             currentSymbol = textArray[counter]
+            setCatImg(catConfig.left)
+            catImg == catConfig.left ? setCatImg(catConfig.right) : setCatImg(catConfig.left)
         }else {
-            console.log('неверно')
+            setCatImg(catConfig.default)
         }
     }
 
@@ -44,8 +47,8 @@ export default function Type() {
 
             <div className="flex flex-col justify-center items-center w-[100%]">
                 <img 
-                    className="block w-16"
-                    src={cats[0].default} 
+                    className="block w-12"
+                    src={catImg} 
                 />
                 <div className="text-line relative w-[100%] h-16 lg:h-12 overflow-hidden rounded-full" style={{backgroundColor: themeConfig.header}}>
                     <div 
