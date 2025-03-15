@@ -47,7 +47,7 @@ export default function Type() {
                     className="block w-16"
                     src={cats[0].default} 
                 />
-                <div className="text-line relative w-[100%] h-16 overflow-hidden rounded-full" style={{backgroundColor: themeConfig.header}}>
+                <div className="text-line relative w-[100%] h-16 lg:h-12 overflow-hidden rounded-full" style={{backgroundColor: themeConfig.header}}>
                     <div 
                         className={`wrapper absolute top-2 w-fit whitespace-nowrap transition-transform duration-50 ease-linear`}
                         ref={textlineRef}
@@ -56,9 +56,10 @@ export default function Type() {
                         {textArray.map((symbol, index) => 
                             (<span 
                                 key={index} 
-                                style={{opacity: index >= counter ? 0.8 : 1, position: 'relative', color: themeConfig.text, fontSize: '2rem', overflow: 'visible'}}
-                                className={index == counter ? `current-symbol before:bg-[${themeConfig.accent}] before:w-[3px]` : ""}
+                                style={{opacity: index >= counter ? 0.8 : 1, position: 'relative', color: themeConfig.text, overflow: 'visible'}}
+                                className={index == counter ? `current-symbol text-[2rem] lg:text-[1.5rem]` : "text-[2rem] lg:text-[1.5rem]"}
                             >
+                                <div className="symbol-cursor" style={{backgroundColor: themeConfig.accent}}></div>
                                 {symbol}
                             </span>)
                         )}

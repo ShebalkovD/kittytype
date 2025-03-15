@@ -24,10 +24,11 @@ main:focus, div:focus {
     border: none;
 }
 
-.current-symbol::before {
+.symbol-cursor{
     content: "";
-    display: block;
+    display: none;
     min-width: 2px;
+    width: 3px;
     height: 100%;
     position: absolute;
     top: 0;
@@ -35,4 +36,21 @@ main:focus, div:focus {
     border-radius: 1rem
 }
 
+.current-symbol .symbol-cursor {
+    display: block;
+}
+
+@media (max-width: 1280px)
+{
+    .container {
+        max-width: 1024px
+    }
+}
+
+@media (max-width: 1024px)
+{
+    .container {
+        max-width: 90%
+    }
+}
 @import "tailwindcss";
