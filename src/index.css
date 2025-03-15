@@ -19,7 +19,7 @@ a {
     padding: 1rem;
 }
 
-main:focus, div:focus {
+*:focus{
     outline: none;
     border: none;
 }
