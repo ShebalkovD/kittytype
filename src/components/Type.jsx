@@ -12,16 +12,21 @@ export default function Type() {
     const [shift, setShift] = useState(0)
     const [theme, setTheme] = useState('light')
     const [themeConfig, setThemeConfig] = useState(themes[0])
-    const [catConfig, setCatConfig] = useState(cats.orange)
+    const [catConfig, setCatConfig] = useState(cats.black)
     const [catImg, setCatImg] = useState(catConfig.default)
     let currentSymbol = textArray[counter]
 
     const handleKeyDown = (event) => {
         if (event.key == currentSymbol) {
+            if (counter == 0) {
+                setCatImg(catConfig.left)
+            }
             setShift(prev => prev + textlineRef.current.childNodes[counter].offsetWidth)
             setCounter(prev => prev + 1)
             currentSymbol = textArray[counter]
-            setCatImg(catConfig.left)
+            if (counter == 0) {
+                setCatImg(catConfig.left)
+            }
             catImg == catConfig.left ? setCatImg(catConfig.right) : setCatImg(catConfig.left)
         }else {
             if (event.code === 'Enter' && (event.ctrlKey || event.metaKey)) {
