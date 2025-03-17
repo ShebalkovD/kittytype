@@ -36,6 +36,10 @@ a {
     border-radius: 1rem
 }
 
+.text-mistake {
+    text-decoration: wavy #C60000 underline;
+}
+
 .current-symbol .symbol-cursor {
     display: block;
 }
