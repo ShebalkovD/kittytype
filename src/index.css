@@ -44,6 +44,10 @@ a {
     display: block;
 }
 
+.symbol:first-child {
+    text-decoration: none;
+}
+
 @media (max-width: 1280px)
 {
     .container {
