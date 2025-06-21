@@ -3,6 +3,7 @@ import themes from '../assets/theme.js'
 import cats from '../assets/cat.js'
 import Header from './Header.jsx'
 import Textline from './Textline.jsx'
+import Result from './Result.jsx'
 
 function Type() {
     const INITIAL_TEXT = 'запуск импонировать город насидеть котики непреклонный собачки перевесить профинтить следуемый'
@@ -134,13 +135,14 @@ function Type() {
                         )
                     }
                 </div>)
-                : (
-                    <div className="result w-[20%] mx-auto p-8 rounded-2xl relative top-[30vh]" style={{backgroundColor: theme.header, color: theme.text}}>
-                        <p>Скорость печати: <span style={{color: theme.accent}}>{counter * 2}</span> с/м</p>
-                        <p>Ошибки: <span style={{color: theme.accent}}> {mistakeCounter}</span></p>
-                        <button onClick={restart} style={{backgroundColor: theme.accent}}>Заново</button>
-                    </div>
-                )
+                : 
+                <Result 
+                    theme={theme}
+                    counter={counter}
+                    mistakeCounter={mistakeCounter}
+                    restart={restart} 
+                />
+                
             }
             
         </main>
